@@ -1,0 +1,69 @@
+name:                hw3
+version:             0.1.0.0
+synopsis:            Synopsis for task 3
+description:         Task 3 for FP ITMO course
+
+homepage:            https://github.com/fp-ctd-itmo/homework-3-Xagen37/tree/master/hw3#readme
+license:             MIT
+license-file:        LICENSE
+author:              Sofrygin Alexander
+maintainer:          284554@niuitmo.ru
+copyright:           2022 Sofrygin Alexander
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.10.7
+
+library
+  hs-source-dirs:      src
+  exposed-modules:
+      HW3.Action
+      HW3.Base
+      HW3.Evaluator
+      HW3.Parser
+      HW3.Pretty
+  ghc-options:         -Wall
+  build-depends:       
+      base >= 4.9 && < 5
+    , bytestring
+    , containers
+    , directory
+    , megaparsec
+    , parser-combinators
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , random
+    , scientific
+    , serialise
+    , text
+    , time
+    , transformers
+    , zlib
+  default-language:    Haskell2010
+
+executable hi
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , containers
+                     , haskeline
+                     , hw3
+                     , megaparsec
+                     , QuickCheck
+                     , text
+                     , prettyprinter
+                     , template-haskell
+                     , bytestring
+                     , directory
+                     , parser-combinators
+                     , prettyprinter-ansi-terminal
+                     , random
+                     , scientific
+                     , serialise
+                     , time
+                     , transformers
+                     , zlib
+  default-language:    Haskell2010
